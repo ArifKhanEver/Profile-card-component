@@ -26,16 +26,46 @@ body {
   position: relative;
 }
 
-body .pattern-top {
-  position: relative;
-  left: -20%;
-  top: -30rem;
+body::before {
+  content: "";
+  position: absolute;
+  height: 150%;
+  width: 72%;
+  background-image: url(../images/bg-pattern-top.svg);
+  background-repeat: no-repeat;
+  background-size: 99%;
+  top: -516px;
+  left: -23%;
 }
 
-body .pattern-bottom {
-  position: relative;
-  right: -45%;
-  bottom: 35em;
+@media screen and (max-width: 480px) {
+  body::before {
+    top: -273px;
+    left: -77%;
+    background-size: 99%;
+    width: 131%;
+  }
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  height: 150%;
+  width: 72%;
+  background-image: url(../images/bg-pattern-bottom.svg);
+  background-repeat: no-repeat;
+  background-size: 99%;
+  bottom: -715px;
+  right: -22%;
+  z-index: -1;
+}
+
+@media screen and (max-width: 480px) {
+  body::after {
+    bottom: -988px;
+    right: -21%;
+    background-size: 179%;
+  }
 }
 
 body main {
@@ -49,6 +79,12 @@ body main {
   height: 370px;
   border-radius: 12px;
   overflow: hidden;
+}
+
+@media screen and (max-width: 480px) {
+  body main {
+    top: 145px;
+  }
 }
 
 body main .pattern {

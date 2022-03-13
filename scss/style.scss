@@ -24,26 +24,49 @@ body {
     font-size: 18px;
     font-family: 'Kumbh Sans', sans-serif;
     background-color: $darkCyan;
-    // background-image: url(../images/bg-pattern-top.svg);
-    // background-repeat: no-repeat;
-    // background-size: contain;
     height: 100vh;
     overflow: hidden;
     position: relative;
-    .pattern-top {
-        position: relative;
-        left: -20%;
-        top: -30rem;
+    &::before {
+        content: "";
+        position: absolute;
+        height: 150%;
+        width: 72%;
+        background-image: url(../images/bg-pattern-top.svg);
+        background-repeat: no-repeat;
+        background-size: 99%;
+        top: -516px;
+        left: -23%;
+        @media screen and (max-width: 480px) {
+            top: -273px;
+            left: -77%;
+            background-size: 99%;
+            width: 131%;
+        }
     }
-    .pattern-bottom {
-        position: relative;
-        right: -45%;
-        bottom: 35em;
-    }
-    
+    &::after {
+        content: "";
+        position: absolute;
+        height: 150%;
+        width: 72%;
+        background-image: url(../images/bg-pattern-bottom.svg);
+        background-repeat: no-repeat;
+        background-size: 99%;
+        bottom: -715px;
+        right: -22%;
+        z-index: -1;
+        @media screen and (max-width: 480px) {
+            bottom: -988px;
+            right: -21%;
+            background-size: 179%;
+        }
+    }   
     main {
         position: absolute;
         top: 175px;
+        @media screen and (max-width: 480px) {
+            top: 145px;
+        }
         left: 50%;
         transform: translateX(-50%);
         background-color: #fff;
